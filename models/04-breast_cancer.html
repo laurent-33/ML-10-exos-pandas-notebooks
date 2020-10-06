@@ -1,0 +1,1117 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instructions &#8212; Machine Learning Katas</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Machine Learning Katas</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <p class="caption">
+ <span class="caption-text">
+  Using tools
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/numpy.html">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/pandas.html">
+   pandas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Training models
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tabular_data.html">
+   Tabular data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="images.html">
+   Images
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text.html">
+   Text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="time_series.html">
+   Time series
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding algorithms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/classification_metrics.html">
+   Classification metrics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/preprocessing_functions.html">
+   Preprocessing functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/acknowledgments.html">
+   Acknowledgments
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/models/04-breast_cancer.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bpesquet/mlkatas"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bpesquet/mlkatas/issues/new?title=Issue%20on%20page%20%2Fmodels/04-breast_cancer.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/bpesquet/mlkatas/edit/master/models/04-breast_cancer.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/bpesquet/mlkatas/master?urlpath=tree/models/04-breast_cancer.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/bpesquet/mlkatas/blob/master/models/04-breast_cancer.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Instructions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagnose-breast-tumors-with-k-nearest-neighbors">
+   Diagnose Breast Tumors With K-Nearest Neighbors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#package-setup">
+     Package setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-loading-the-data">
+     Step 1: Loading the data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-preparing-the-data">
+     Step 2: Preparing the data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question">
+       Question
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Question
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Question
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Question
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-creating-a-classifier">
+     Step 3: Creating a classifier
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Question
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-evaluating-the-classifier">
+     Step 4: Evaluating the classifier
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Question
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Question
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <!--NAVIGATION-->
+<p><a href="https://colab.research.google.com/github/bpesquet/machine-learning-katas/blob/master/notebooks/training_models/breast_cancer.ipynb"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a></p>
+<div class="section" id="instructions">
+<h1>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h1>
+<p>This is a self-correcting notebook generated by <a class="reference external" href="https://github.com/jupyter/nbgrader">nbgrader</a>.</p>
+<p>Fill in any place that says <code class="docutils literal notranslate"><span class="pre">YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE</span></code> or <code class="docutils literal notranslate"><span class="pre">YOUR</span> <span class="pre">ANSWER</span> <span class="pre">HERE</span></code>. Run subsequent cells to check your code.</p>
+</div>
+<div class="section" id="diagnose-breast-tumors-with-k-nearest-neighbors">
+<h1>Diagnose Breast Tumors With K-Nearest Neighbors<a class="headerlink" href="#diagnose-breast-tumors-with-k-nearest-neighbors" title="Permalink to this headline">¶</a></h1>
+<p>In this notebook, you’ll use a K-Nearest Neighbors classifier to help diagnose breast tumors.</p>
+<p>The <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)">Breast Cancer</a> dataset is used for multivariate binary classification between benign and maligant tumors. There are 569 total samples with 30 features each. Features were computed from a digitized image of a fine needle aspirate of a breast mass. They describe characteristics of the cell nuclei present in the image.</p>
+<p><img alt="Breast cancer logo" src="../_images/breast-cancer.jpg" /></p>
+<div class="section" id="package-setup">
+<h2>Package setup<a class="headerlink" href="#package-setup" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import base packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup plots</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import ML packages</span>
+<span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;scikit-learn version: </span><span class="si">{</span><span class="n">sklearn</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_breast_cancer</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>scikit-learn version: 0.22.2.post1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-1-loading-the-data">
+<h2>Step 1: Loading the data<a class="headerlink" href="#step-1-loading-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">load_breast_cancer</span><span class="p">()</span>
+
+<span class="c1"># Put data in a pandas DataFrame</span>
+<span class="n">df_breast_cancer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">dataset</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="c1"># Add target and class to DataFrame</span>
+<span class="n">df_breast_cancer</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target</span>
+<span class="n">df_breast_cancer</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target_names</span><span class="p">[</span><span class="n">dataset</span><span class="o">.</span><span class="n">target</span><span class="p">]</span>
+<span class="c1"># Show 10 random samples</span>
+<span class="n">df_breast_cancer</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean radius</th>
+      <th>mean texture</th>
+      <th>mean perimeter</th>
+      <th>mean area</th>
+      <th>mean smoothness</th>
+      <th>mean compactness</th>
+      <th>mean concavity</th>
+      <th>mean concave points</th>
+      <th>mean symmetry</th>
+      <th>mean fractal dimension</th>
+      <th>...</th>
+      <th>worst perimeter</th>
+      <th>worst area</th>
+      <th>worst smoothness</th>
+      <th>worst compactness</th>
+      <th>worst concavity</th>
+      <th>worst concave points</th>
+      <th>worst symmetry</th>
+      <th>worst fractal dimension</th>
+      <th>target</th>
+      <th>class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>294</th>
+      <td>12.720</td>
+      <td>13.78</td>
+      <td>81.78</td>
+      <td>492.1</td>
+      <td>0.09667</td>
+      <td>0.08393</td>
+      <td>0.012880</td>
+      <td>0.019240</td>
+      <td>0.1638</td>
+      <td>0.06100</td>
+      <td>...</td>
+      <td>88.54</td>
+      <td>553.7</td>
+      <td>0.1298</td>
+      <td>0.14720</td>
+      <td>0.05233</td>
+      <td>0.06343</td>
+      <td>0.2369</td>
+      <td>0.06922</td>
+      <td>1</td>
+      <td>benign</td>
+    </tr>
+    <tr>
+      <th>421</th>
+      <td>14.690</td>
+      <td>13.98</td>
+      <td>98.22</td>
+      <td>656.1</td>
+      <td>0.10310</td>
+      <td>0.18360</td>
+      <td>0.145000</td>
+      <td>0.063000</td>
+      <td>0.2086</td>
+      <td>0.07406</td>
+      <td>...</td>
+      <td>114.10</td>
+      <td>809.2</td>
+      <td>0.1312</td>
+      <td>0.36350</td>
+      <td>0.32190</td>
+      <td>0.11080</td>
+      <td>0.2827</td>
+      <td>0.09208</td>
+      <td>1</td>
+      <td>benign</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>15.460</td>
+      <td>11.89</td>
+      <td>102.50</td>
+      <td>736.9</td>
+      <td>0.12570</td>
+      <td>0.15550</td>
+      <td>0.203200</td>
+      <td>0.109700</td>
+      <td>0.1966</td>
+      <td>0.07069</td>
+      <td>...</td>
+      <td>125.00</td>
+      <td>1102.0</td>
+      <td>0.1531</td>
+      <td>0.35830</td>
+      <td>0.58300</td>
+      <td>0.18270</td>
+      <td>0.3216</td>
+      <td>0.10100</td>
+      <td>0</td>
+      <td>malignant</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>19.190</td>
+      <td>15.94</td>
+      <td>126.30</td>
+      <td>1157.0</td>
+      <td>0.08694</td>
+      <td>0.11850</td>
+      <td>0.119300</td>
+      <td>0.096670</td>
+      <td>0.1741</td>
+      <td>0.05176</td>
+      <td>...</td>
+      <td>146.60</td>
+      <td>1495.0</td>
+      <td>0.1124</td>
+      <td>0.20160</td>
+      <td>0.22640</td>
+      <td>0.17770</td>
+      <td>0.2443</td>
+      <td>0.06251</td>
+      <td>0</td>
+      <td>malignant</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>16.650</td>
+      <td>21.38</td>
+      <td>110.00</td>
+      <td>904.6</td>
+      <td>0.11210</td>
+      <td>0.14570</td>
+      <td>0.152500</td>
+      <td>0.091700</td>
+      <td>0.1995</td>
+      <td>0.06330</td>
+      <td>...</td>
+      <td>177.00</td>
+      <td>2215.0</td>
+      <td>0.1805</td>
+      <td>0.35780</td>
+      <td>0.46950</td>
+      <td>0.20950</td>
+      <td>0.3613</td>
+      <td>0.09564</td>
+      <td>0</td>
+      <td>malignant</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>9.787</td>
+      <td>19.94</td>
+      <td>62.11</td>
+      <td>294.5</td>
+      <td>0.10240</td>
+      <td>0.05301</td>
+      <td>0.006829</td>
+      <td>0.007937</td>
+      <td>0.1350</td>
+      <td>0.06890</td>
+      <td>...</td>
+      <td>68.81</td>
+      <td>366.1</td>
+      <td>0.1316</td>
+      <td>0.09473</td>
+      <td>0.02049</td>
+      <td>0.02381</td>
+      <td>0.1934</td>
+      <td>0.08988</td>
+      <td>1</td>
+      <td>benign</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>19.100</td>
+      <td>26.29</td>
+      <td>129.10</td>
+      <td>1132.0</td>
+      <td>0.12150</td>
+      <td>0.17910</td>
+      <td>0.193700</td>
+      <td>0.146900</td>
+      <td>0.1634</td>
+      <td>0.07224</td>
+      <td>...</td>
+      <td>141.30</td>
+      <td>1298.0</td>
+      <td>0.1392</td>
+      <td>0.28170</td>
+      <td>0.24320</td>
+      <td>0.18410</td>
+      <td>0.2311</td>
+      <td>0.09203</td>
+      <td>0</td>
+      <td>malignant</td>
+    </tr>
+    <tr>
+      <th>336</th>
+      <td>12.990</td>
+      <td>14.23</td>
+      <td>84.08</td>
+      <td>514.3</td>
+      <td>0.09462</td>
+      <td>0.09965</td>
+      <td>0.037380</td>
+      <td>0.020980</td>
+      <td>0.1652</td>
+      <td>0.07238</td>
+      <td>...</td>
+      <td>87.38</td>
+      <td>576.0</td>
+      <td>0.1142</td>
+      <td>0.19750</td>
+      <td>0.14500</td>
+      <td>0.05850</td>
+      <td>0.2432</td>
+      <td>0.10090</td>
+      <td>1</td>
+      <td>benign</td>
+    </tr>
+    <tr>
+      <th>325</th>
+      <td>12.670</td>
+      <td>17.30</td>
+      <td>81.25</td>
+      <td>489.9</td>
+      <td>0.10280</td>
+      <td>0.07664</td>
+      <td>0.031930</td>
+      <td>0.021070</td>
+      <td>0.1707</td>
+      <td>0.05984</td>
+      <td>...</td>
+      <td>88.70</td>
+      <td>574.4</td>
+      <td>0.1384</td>
+      <td>0.12120</td>
+      <td>0.10200</td>
+      <td>0.05602</td>
+      <td>0.2688</td>
+      <td>0.06888</td>
+      <td>1</td>
+      <td>benign</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>13.150</td>
+      <td>15.34</td>
+      <td>85.31</td>
+      <td>538.9</td>
+      <td>0.09384</td>
+      <td>0.08498</td>
+      <td>0.092930</td>
+      <td>0.034830</td>
+      <td>0.1822</td>
+      <td>0.06207</td>
+      <td>...</td>
+      <td>97.67</td>
+      <td>677.3</td>
+      <td>0.1478</td>
+      <td>0.22560</td>
+      <td>0.30090</td>
+      <td>0.09722</td>
+      <td>0.3849</td>
+      <td>0.08633</td>
+      <td>1</td>
+      <td>benign</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 32 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="step-2-preparing-the-data">
+<h2>Step 2: Preparing the data<a class="headerlink" href="#step-2-preparing-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="question">
+<h3>Question<a class="headerlink" href="#question" title="Permalink to this headline">¶</a></h3>
+<p>Compute the number of features of the dataset into the <code class="docutils literal notranslate"><span class="pre">num_features</span></code> variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_features</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_breast_cancer</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of features: </span><span class="si">{</span><span class="n">num_features</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">num_features</span> <span class="o">==</span> <span class="mi">30</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of features: 30
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Question<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>In order to evaluate class distribution, compute the number of benign and malignant tumors into the <code class="docutils literal notranslate"><span class="pre">num_benign</span></code> and <code class="docutils literal notranslate"><span class="pre">num_malignant</span></code> variables respectively.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">class_count</span> <span class="o">=</span> <span class="n">df_breast_cancer</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">class_count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>benign       357
+malignant    212
+Name: class, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_benign</span> <span class="o">=</span> <span class="n">class_count</span><span class="p">[</span><span class="s1">&#39;benign&#39;</span><span class="p">]</span>
+<span class="n">num_malignant</span> <span class="o">=</span> <span class="n">class_count</span><span class="p">[</span><span class="s1">&#39;malignant&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Benign count: </span><span class="si">{</span><span class="n">num_benign</span><span class="si">}</span><span class="s1">. Malignant count: </span><span class="si">{</span><span class="n">num_malignant</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">num_benign</span> <span class="o">==</span> <span class="mi">357</span>
+<span class="k">assert</span> <span class="n">num_malignant</span> <span class="o">==</span> <span class="mi">212</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Benign count: 357. Malignant count: 212
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store input and labels</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x: </span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">. y: </span><span class="si">{</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x: (569, 30). y: (569,)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Question<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Split the dataset into training and test sets with a 25% ratio. Use variables <code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>, <code class="docutils literal notranslate"><span class="pre">x_test</span></code> and <code class="docutils literal notranslate"><span class="pre">y_test</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x_train: </span><span class="si">{</span><span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">. y_train: </span><span class="si">{</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x_test: </span><span class="si">{</span><span class="n">x_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">. y_test: </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">x_train</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">426</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">426</span><span class="p">,</span> <span class="p">)</span>
+<span class="k">assert</span> <span class="n">x_test</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">143</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">143</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x_train: (426, 30). y_train: (426,)
+x_test: (143, 30). y_test: (143,)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Question<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Scale features by standardization while preventing information leakage from the test set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">x_train</span> <span class="o">=</span> <span class="n">x_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+<span class="n">x_test</span> <span class="o">=</span> <span class="n">x_scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_train</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">std_train</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean_train: </span><span class="si">{</span><span class="n">mean_train</span><span class="si">}</span><span class="s1">. std_train: </span><span class="si">{</span><span class="n">std_train</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mean_train</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">**-</span><span class="mi">6</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">std_train</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">**-</span><span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean_train: 3.135728505232367e-16. std_train: 1.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-3-creating-a-classifier">
+<h2>Step 3: Creating a classifier<a class="headerlink" href="#step-3-creating-a-classifier" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Question<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">KNeighborsClassifier</span></code> instance using only one nearest neighbor, store it into the <code class="docutils literal notranslate"><span class="pre">model</span></code> variable, and fit the training data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 0 1 0 1 1 1 1 1 0 0 0 1 1 0 0 1 1 0 1 0 1 1
+ 1 1 0 1 0 1 0 0 0 1 0 1 1 0 0 0 1 1 1 1 1 1 0 1 0 0 0 1 0 1 1 1 0 1 1 1 1
+ 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 0 1 1 1 0 0 1 1 1 1 0 0 1 1
+ 1 0 0 0 1 1 0 1 1 1 0 1 1 0 1 0 1 1 0 1 1 1 1 1 0 1 0 0 1 1 1 1 1 0 1 0 1
+ 0 1 1 1 1 1 0 1 0 1 0 1 0 1 1 1 1 0 1 1 0 1 0 1 0 0 0 1 0 1 0 1 0 1 0 0 1
+ 0 0 1 1 1 0 1 1 1 0 0 1 0 0 1 1 0 1 0 1 1 1 1 1 1 0 1 1 0 1 1 1 0 0 1 1 1
+ 1 0 0 0 1 0 1 1 0 1 0 1 1 1 1 0 1 0 1 0 0 1 0 1 1 0 1 1 1 1 0 1 1 0 1 1 0
+ 1 1 1 1 1 1 1 1 0 0 0 1 1 1 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 1 1 1 0 1 1 1
+ 0 1 0 1 1 1 0 0 0 1 1 1 1 1 0 1 1 1 0 1 1 0 1 1 0 0 1 1 1 1 1 1 0 0 0 1 1
+ 0 1 1 0 0 1 1 0 0 1 1 0 1 1 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 0 1 0 1 1 1 1
+ 0 0 0 1 1 0 1 1 0 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 1 1 0 1 1 0 1 1 1 0 0 1 1
+ 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 1 1]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
+                     metric_params=None, n_jobs=None, n_neighbors=3, p=2,
+                     weights=&#39;uniform&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-4-evaluating-the-classifier">
+<h2>Step 4: Evaluating the classifier<a class="headerlink" href="#step-4-evaluating-the-classifier" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute accuracy on training and test sets</span>
+<span class="n">train_acc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">test_acc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Training accuracy: </span><span class="si">{</span><span class="n">train_acc</span> <span class="o">*</span> <span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Test accuracy: </span><span class="si">{</span><span class="n">test_acc</span> <span class="o">*</span> <span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training accuracy: 97.18%
+Test accuracy: 98.60%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Question<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Display precision, recall and f1-score for the classifier on test data. Interpret the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;precision : &#39;</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_train_pred</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;recall    : &#39;</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_train_pred</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f1-score  : &#39;</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_train_pred</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>precision :  0.9962121212121212
+recall    :  0.9598540145985401
+f1-score  :  0.9776951672862454
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;precision : &#39;</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test_pred</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;recall    : &#39;</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test_pred</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f1-score  : &#39;</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test_pred</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>precision :  1.0
+recall    :  0.9789473684210527
+f1-score  :  0.9893617021276596
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">y_test_pred</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">y_test</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     0  0
+0    1  1
+1    1  1
+2    1  1
+3    0  0
+4    1  1
+5    1  1
+6    1  1
+7    1  1
+8    0  0
+9    1  1
+10   1  1
+11   1  1
+12   1  1
+13   1  1
+14   1  1
+15   1  1
+16   1  1
+17   0  0
+18   0  0
+19   0  0
+20   1  1
+21   1  1
+22   0  0
+23   0  0
+24   0  0
+25   0  0
+26   1  1
+27   1  1
+28   1  1
+29   0  0
+..  .. ..
+113  1  1
+114  0  0
+115  1  1
+116  1  1
+117  1  1
+118  0  0
+119  1  1
+120  1  1
+121  0  0
+122  1  1
+123  1  1
+124  1  1
+125  0  0
+126  0  0
+127  1  1
+128  0  0
+129  1  1
+130  1  1
+131  1  1
+132  1  1
+133  1  1
+134  0  0
+135  0  0
+136  1  1
+137  1  1
+138  0  0
+139  1  1
+140  1  1
+141  0  0
+142  1  1
+
+[143 rows x 2 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Question<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Go back to step 3 and try to find the best value for the <code class="docutils literal notranslate"><span class="pre">k</span></code> number of nearest neighbors.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./models"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Baptiste Pesquet<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>

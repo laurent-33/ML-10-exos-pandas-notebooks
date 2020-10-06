@@ -1,0 +1,1367 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instructions &#8212; Machine Learning Katas</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Machine Learning Katas</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <p class="caption">
+ <span class="caption-text">
+  Using tools
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/numpy.html">
+   NumPy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tools/pandas.html">
+   pandas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Training models
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tabular_data.html">
+   Tabular data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="images.html">
+   Images
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="text.html">
+   Text
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="time_series.html">
+   Time series
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding algorithms
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/classification_metrics.html">
+   Classification metrics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/preprocessing_functions.html">
+   Preprocessing functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/acknowledgments.html">
+   Acknowledgments
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/models/13-planar_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/bpesquet/mlkatas"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/bpesquet/mlkatas/issues/new?title=Issue%20on%20page%20%2Fmodels/13-planar_data.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/bpesquet/mlkatas/edit/master/models/13-planar_data.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/bpesquet/mlkatas/master?urlpath=tree/models/13-planar_data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/bpesquet/mlkatas/blob/master/models/13-planar_data.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Instructions
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classify-planar-data">
+   Classify Planar Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#environment-setup">
+     Environment setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-preparing-the-data">
+     Step 1: Preparing the data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-training-a-classifier">
+     Step 3: Training a classifier
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question">
+       Question¶
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Question
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-tuning-the-classifier">
+     Step 4: Tuning the classifier
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Question
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#todo">
+     TODO
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <!--NAVIGATION-->
+<p><a href="https://colab.research.google.com/github/bpesquet/machine-learning-katas/blob/master/notebooks/training_models/planar_data.ipynb"><img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a></p>
+<div class="section" id="instructions">
+<h1>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h1>
+<p>This is a self-correcting notebook generated by <a class="reference external" href="https://github.com/jupyter/nbgrader">nbgrader</a>.</p>
+<p>Fill in any place that says <code class="docutils literal notranslate"><span class="pre">YOUR</span> <span class="pre">CODE</span> <span class="pre">HERE</span></code> or <code class="docutils literal notranslate"><span class="pre">YOUR</span> <span class="pre">ANSWER</span> <span class="pre">HERE</span></code>. Run subsequent cells to check your code.</p>
+</div>
+<div class="section" id="classify-planar-data">
+<h1>Classify Planar Data<a class="headerlink" href="#classify-planar-data" title="Permalink to this headline">¶</a></h1>
+<p>In this notebook, you’ll search for the best hyperparameters for a Decision Tree classifier on a planar dataset.</p>
+<div class="section" id="environment-setup">
+<h2>Environment setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import base packages</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">ListedColormap</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">graphviz</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup plots</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import ML packages</span>
+<span class="kn">import</span> <span class="nn">sklearn</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;scikit-learn version: </span><span class="si">{</span><span class="n">sklearn</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_moons</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span><span class="p">,</span> <span class="n">plot_tree</span><span class="p">,</span> <span class="n">export_graphviz</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>scikit-learn version: 0.22.2.post1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Utilify functions</span>
+
+
+<span class="k">def</span> <span class="nf">plot_planar_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plot some 2D data&quot;&quot;&quot;</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;or&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;ob&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">plot_decision_boundary</span><span class="p">(</span><span class="n">pred_func</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plot a decision boundary&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">figure</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># If no figure is given, create a new one</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="c1"># Set min and max values and give it some padding</span>
+    <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span>
+    <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="c1"># Generate a grid of points with distance h between them</span>
+    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+    <span class="c1"># Predict the function value for the whole grid</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">pred_func</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="c1"># Plot the contour and training examples</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">)</span>
+    <span class="n">cm_bright</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s2">&quot;#FF0000&quot;</span><span class="p">,</span> <span class="s2">&quot;#0000FF&quot;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_bright</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">export_decision_tree</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Export a DT to graphviz format&quot;&quot;&quot;</span>
+
+    <span class="c1"># If using Jupyter locally, install graphviz with this command: conda install python-graphviz</span>
+    <span class="n">dot_data</span> <span class="o">=</span> <span class="n">export_graphviz</span><span class="p">(</span>
+        <span class="n">tree</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">special_characters</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">dot_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-1-preparing-the-data">
+<h2>Step 1: Preparing the data<a class="headerlink" href="#step-1-preparing-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate moon-shaped, noisy data</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_moons</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+
+<span class="n">plot_planar_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/13-planar_data_9_0.png" src="../_images/13-planar_data_9_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="step-3-training-a-classifier">
+<h2>Step 3: Training a classifier<a class="headerlink" href="#step-3-training-a-classifier" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="question">
+<h3>Question¶<a class="headerlink" href="#question" title="Permalink to this headline">¶</a></h3>
+<p>Split data and labels into the <code class="docutils literal notranslate"><span class="pre">x_train</span></code>, <code class="docutils literal notranslate"><span class="pre">x_test</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code> and <code class="docutils literal notranslate"><span class="pre">y_test</span></code> variables using a 25% ratio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x_train: </span><span class="si">{</span><span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">. y_train: </span><span class="si">{</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x_test: </span><span class="si">{</span><span class="n">x_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">. y_test: </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">x_train</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">750</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">y_train</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">750</span><span class="p">,)</span>
+<span class="k">assert</span> <span class="n">x_test</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">y_test</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">250</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x_train: (750, 2). y_train: (750,)
+x_test: (250, 2). y_test: (250,)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Question<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> instance and store it into the <code class="docutils literal notranslate"><span class="pre">dt_model</span></code> variable. Fit this model on the training data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="n">dt_model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">dt_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion=&#39;gini&#39;,
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort=&#39;deprecated&#39;,
+                       random_state=None, splitter=&#39;best&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute accuracy on training and test sets</span>
+<span class="n">train_acc</span> <span class="o">=</span> <span class="n">dt_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">test_acc</span> <span class="o">=</span> <span class="n">dt_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training accuracy: </span><span class="si">{</span><span class="n">train_acc</span> <span class="o">*</span> <span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test accuracy: </span><span class="si">{</span><span class="n">test_acc</span> <span class="o">*</span> <span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">train_acc</span> <span class="o">&gt;</span> <span class="mf">0.95</span>
+<span class="k">assert</span> <span class="n">test_acc</span> <span class="o">&gt;</span> <span class="mf">0.74</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training accuracy: 100.00%
+Test accuracy: 79.60%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the DT</span>
+<span class="n">dot_data</span> <span class="o">=</span> <span class="n">export_decision_tree</span><span class="p">(</span><span class="n">dt_model</span><span class="p">)</span>
+<span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">/opt/conda/lib/python3.7/site-packages/graphviz/backend.py</span> in <span class="ni">run</span><span class="nt">(cmd, input, capture_output, check, quiet, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">159</span>         <span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">startupinfo</span><span class="o">=</span><span class="n">get_startupinfo</span><span class="p">(),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span>     <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">/opt/conda/lib/python3.7/subprocess.py</span> in <span class="ni">__init__</span><span class="nt">(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, encoding, errors, text)</span>
+<span class="g g-Whitespace">    </span><span class="mi">774</span>                                 <span class="n">errread</span><span class="p">,</span> <span class="n">errwrite</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">775</span>                                 <span class="n">restore_signals</span><span class="p">,</span> <span class="n">start_new_session</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">776</span>         <span class="k">except</span><span class="p">:</span>
+
+<span class="nn">/opt/conda/lib/python3.7/subprocess.py</span> in <span class="ni">_execute_child</span><span class="nt">(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, start_new_session)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1521</span>                             <span class="n">err_msg</span> <span class="o">+=</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">err_filename</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1522</span>                     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">err_filename</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1523</span>                 <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;dot&#39;: &#39;dot&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ExecutableNotFound</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="nn">/opt/conda/lib/python3.7/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">345</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">/opt/conda/lib/python3.7/site-packages/graphviz/files.py</span> in <span class="ni">_repr_svg_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> 
+<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">def</span> <span class="nf">_repr_svg_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">113</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;svg&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_encoding</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> 
+<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="k">def</span> <span class="nf">pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">renderer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+<span class="nn">/opt/conda/lib/python3.7/site-packages/graphviz/files.py</span> in <span class="ni">pipe</span><span class="nt">(self, format, renderer, formatter, quiet)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="n">out</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>                            <span class="n">renderer</span><span class="o">=</span><span class="n">renderer</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">138</span>                            <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span> 
+<span class="g g-Whitespace">    </span><span class="mi">140</span>         <span class="k">return</span> <span class="n">out</span>
+
+<span class="nn">/opt/conda/lib/python3.7/site-packages/graphviz/backend.py</span> in <span class="ni">pipe</span><span class="nt">(engine, format, data, renderer, formatter, quiet)</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="s2">     cmd, _ = command(engine, format, None, renderer, formatter)</span>
+<span class="ne">--&gt; </span><span class="mi">229</span><span class="s2">     out, _ = run(cmd, input=data, capture_output=True, check=True, quiet=quiet)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span><span class="s2">     return out</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span><span class="s2"> </span>
+
+<span class="nn">/opt/conda/lib/python3.7/site-packages/graphviz/backend.py</span> in <span class="ni">run</span><span class="nt">(cmd, input, capture_output, check, quiet, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="s2">     except OSError as e:</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="s2">         if e.errno == errno.ENOENT:</span>
+<span class="ne">--&gt; </span><span class="mi">162</span><span class="s2">             raise ExecutableNotFound(cmd)</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span><span class="s2">             raise</span>
+
+<span class="ne">ExecutableNotFound</span>: failed to execute [&#39;dot&#39;, &#39;-Tsvg&#39;], make sure the Graphviz executables are on your systems&#39; PATH
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;graphviz.files.Source at 0x7f592ad17f98&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the decision boundary</span>
+<span class="n">plot_decision_boundary</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">dt_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/13-planar_data_18_0.png" src="../_images/13-planar_data_18_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-4-tuning-the-classifier">
+<h2>Step 4: Tuning the classifier<a class="headerlink" href="#step-4-tuning-the-classifier" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Question<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Search for the best values of <code class="docutils literal notranslate"><span class="pre">max_leaf_nodes</span></code> and <code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code> through a <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> instance, stored in the <code class="docutils literal notranslate"><span class="pre">grid_search_cv</span></code> variable.</p>
+<p>The final test accuracy should be above 84%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+
+<span class="n">estimator</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;max_leaf_nodes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+    <span class="s1">&#39;min_samples_split&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">grid_search_cv</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Search for the best parameters with the specified classifier on training data</span>
+<span class="n">grid_search_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Print the best combination of hyperparameters found</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grid_search_cv</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: max_leaf_nodes 1 must be either None or larger than 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;max_leaf_nodes&#39;: 7, &#39;min_samples_split&#39;: 2}
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 0
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/model_selection/_validation.py:536: FitFailedWarning: Estimator fit failed. The score on this train-test partition for these parameters will be set to nan. Details: 
+ValueError: min_samples_split must be an integer greater than 1 or a float in (0.0, 1.0]; got the integer 1
+
+  FitFailedWarning)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute accuracy on training and test sets</span>
+<span class="n">train_acc</span> <span class="o">=</span> <span class="n">grid_search_cv</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">test_acc</span> <span class="o">=</span> <span class="n">grid_search_cv</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training accuracy: </span><span class="si">{</span><span class="n">train_acc</span> <span class="o">*</span> <span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test accuracy: </span><span class="si">{</span><span class="n">test_acc</span> <span class="o">*</span> <span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">train_acc</span> <span class="o">&gt;</span> <span class="mf">0.84</span>
+<span class="k">assert</span> <span class="n">test_acc</span> <span class="o">&gt;</span> <span class="mf">0.84</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training accuracy: 86.93%
+Test accuracy: 82.40%
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">43</span><span class="o">-</span><span class="mi">47</span><span class="n">caa7066f7d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">assert</span> <span class="n">train_acc</span> <span class="o">&gt;</span> <span class="mf">0.84</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="k">assert</span> <span class="n">test_acc</span> <span class="o">&gt;</span> <span class="mf">0.84</span>
+
+<span class="ne">AssertionError</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the best classifier</span>
+<span class="n">dot_data</span> <span class="o">=</span> <span class="n">export_decision_tree</span><span class="p">(</span><span class="n">grid_search_cv</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">)</span>
+<span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">/opt/conda/lib/python3.7/site-packages/graphviz/backend.py</span> in <span class="ni">run</span><span class="nt">(cmd, input, capture_output, check, quiet, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">159</span>         <span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">startupinfo</span><span class="o">=</span><span class="n">get_startupinfo</span><span class="p">(),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span>     <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">/opt/conda/lib/python3.7/subprocess.py</span> in <span class="ni">__init__</span><span class="nt">(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, encoding, errors, text)</span>
+<span class="g g-Whitespace">    </span><span class="mi">774</span>                                 <span class="n">errread</span><span class="p">,</span> <span class="n">errwrite</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">775</span>                                 <span class="n">restore_signals</span><span class="p">,</span> <span class="n">start_new_session</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">776</span>         <span class="k">except</span><span class="p">:</span>
+
+<span class="nn">/opt/conda/lib/python3.7/subprocess.py</span> in <span class="ni">_execute_child</span><span class="nt">(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, start_new_session)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1521</span>                             <span class="n">err_msg</span> <span class="o">+=</span> <span class="s1">&#39;: &#39;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">err_filename</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1522</span>                     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">err_filename</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1523</span>                 <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;dot&#39;: &#39;dot&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ExecutableNotFound</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="nn">/opt/conda/lib/python3.7/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>             <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">345</span>                 <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">346</span>             <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">/opt/conda/lib/python3.7/site-packages/graphviz/files.py</span> in <span class="ni">_repr_svg_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> 
+<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">def</span> <span class="nf">_repr_svg_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">113</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;svg&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_encoding</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> 
+<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="k">def</span> <span class="nf">pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">renderer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+<span class="nn">/opt/conda/lib/python3.7/site-packages/graphviz/files.py</span> in <span class="ni">pipe</span><span class="nt">(self, format, renderer, formatter, quiet)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="n">out</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>                            <span class="n">renderer</span><span class="o">=</span><span class="n">renderer</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">138</span>                            <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span> 
+<span class="g g-Whitespace">    </span><span class="mi">140</span>         <span class="k">return</span> <span class="n">out</span>
+
+<span class="nn">/opt/conda/lib/python3.7/site-packages/graphviz/backend.py</span> in <span class="ni">pipe</span><span class="nt">(engine, format, data, renderer, formatter, quiet)</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="s2">     cmd, _ = command(engine, format, None, renderer, formatter)</span>
+<span class="ne">--&gt; </span><span class="mi">229</span><span class="s2">     out, _ = run(cmd, input=data, capture_output=True, check=True, quiet=quiet)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span><span class="s2">     return out</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span><span class="s2"> </span>
+
+<span class="nn">/opt/conda/lib/python3.7/site-packages/graphviz/backend.py</span> in <span class="ni">run</span><span class="nt">(cmd, input, capture_output, check, quiet, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="s2">     except OSError as e:</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="s2">         if e.errno == errno.ENOENT:</span>
+<span class="ne">--&gt; </span><span class="mi">162</span><span class="s2">             raise ExecutableNotFound(cmd)</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span><span class="s2">             raise</span>
+
+<span class="ne">ExecutableNotFound</span>: failed to execute [&#39;dot&#39;, &#39;-Tsvg&#39;], make sure the Graphviz executables are on your systems&#39; PATH
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;graphviz.files.Source at 0x7f5974a639e8&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the decision boundary</span>
+<span class="n">plot_decision_boundary</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">grid_search_cv</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/13-planar_data_25_0.png" src="../_images/13-planar_data_25_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Try other metrics for grid search (f1, ROC AUC)</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./models"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Baptiste Pesquet<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>
