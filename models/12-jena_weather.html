@@ -364,7 +364,9 @@
 <h2>Environment setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">platform</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">autosave</span> 0
+
+<span class="kn">import</span> <span class="nn">platform</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python version: </span><span class="si">{</span><span class="n">platform</span><span class="o">.</span><span class="n">python_version</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">platform</span><span class="o">.</span><span class="n">python_version_tuple</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">)</span>
@@ -374,6 +376,12 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">IPython.notebook.set_autosave_interval(0)</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Autosave disabled
+Python version: 3.7.3
 </pre></div>
 </div>
 </div>
@@ -400,6 +408,12 @@
 
 <span class="c1"># You may add other imports here as needed</span>
 <span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TensorFlow version: 2.0.1
+Keras version: 2.2.4-tf
 </pre></div>
 </div>
 </div>
@@ -451,13 +465,13 @@
     <span class="n">epochs</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="s2">&quot;.--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Training loss&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">loss</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="s2">&quot;.--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Training loss&quot;</span><span class="p">)</span>
     <span class="n">final_loss</span> <span class="o">=</span> <span class="n">loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Training loss: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">final_loss</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Loss&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="s2">&quot;val_loss&quot;</span> <span class="ow">in</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">:</span>
         <span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_loss&quot;</span><span class="p">]</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">,</span> <span class="s2">&quot;o-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Validation loss&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">val_loss</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="s2">&quot;o-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Validation loss&quot;</span><span class="p">)</span>
         <span class="n">final_val_loss</span> <span class="o">=</span> <span class="n">val_loss</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">title</span> <span class="o">+=</span> <span class="s2">&quot;, Validation loss: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">final_val_loss</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
@@ -482,6 +496,13 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/jena_climate_2009_2016.csv.zip
+13574144/13568290 [==============================] - 1s 0us/step
+Dataset extracted at /home/jovyan/.keras/datasets/jena_climate_2009_2016.csv
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -491,16 +512,241 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset: (420551, 15)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="question">
 <h3>Question<a class="headerlink" href="#question" title="Permalink to this headline">¶</a></h3>
 <p>Show the first 10 data samples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_weather</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date Time</th>
+      <th>p (mbar)</th>
+      <th>T (degC)</th>
+      <th>Tpot (K)</th>
+      <th>Tdew (degC)</th>
+      <th>rh (%)</th>
+      <th>VPmax (mbar)</th>
+      <th>VPact (mbar)</th>
+      <th>VPdef (mbar)</th>
+      <th>sh (g/kg)</th>
+      <th>H2OC (mmol/mol)</th>
+      <th>rho (g/m**3)</th>
+      <th>wv (m/s)</th>
+      <th>max. wv (m/s)</th>
+      <th>wd (deg)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>01.01.2009 00:10:00</td>
+      <td>996.52</td>
+      <td>-8.02</td>
+      <td>265.40</td>
+      <td>-8.90</td>
+      <td>93.3</td>
+      <td>3.33</td>
+      <td>3.11</td>
+      <td>0.22</td>
+      <td>1.94</td>
+      <td>3.12</td>
+      <td>1307.75</td>
+      <td>1.03</td>
+      <td>1.75</td>
+      <td>152.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>01.01.2009 00:20:00</td>
+      <td>996.57</td>
+      <td>-8.41</td>
+      <td>265.01</td>
+      <td>-9.28</td>
+      <td>93.4</td>
+      <td>3.23</td>
+      <td>3.02</td>
+      <td>0.21</td>
+      <td>1.89</td>
+      <td>3.03</td>
+      <td>1309.80</td>
+      <td>0.72</td>
+      <td>1.50</td>
+      <td>136.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>01.01.2009 00:30:00</td>
+      <td>996.53</td>
+      <td>-8.51</td>
+      <td>264.91</td>
+      <td>-9.31</td>
+      <td>93.9</td>
+      <td>3.21</td>
+      <td>3.01</td>
+      <td>0.20</td>
+      <td>1.88</td>
+      <td>3.02</td>
+      <td>1310.24</td>
+      <td>0.19</td>
+      <td>0.63</td>
+      <td>171.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>01.01.2009 00:40:00</td>
+      <td>996.51</td>
+      <td>-8.31</td>
+      <td>265.12</td>
+      <td>-9.07</td>
+      <td>94.2</td>
+      <td>3.26</td>
+      <td>3.07</td>
+      <td>0.19</td>
+      <td>1.92</td>
+      <td>3.08</td>
+      <td>1309.19</td>
+      <td>0.34</td>
+      <td>0.50</td>
+      <td>198.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>01.01.2009 00:50:00</td>
+      <td>996.51</td>
+      <td>-8.27</td>
+      <td>265.15</td>
+      <td>-9.04</td>
+      <td>94.1</td>
+      <td>3.27</td>
+      <td>3.08</td>
+      <td>0.19</td>
+      <td>1.92</td>
+      <td>3.09</td>
+      <td>1309.00</td>
+      <td>0.32</td>
+      <td>0.63</td>
+      <td>214.3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>01.01.2009 01:00:00</td>
+      <td>996.50</td>
+      <td>-8.05</td>
+      <td>265.38</td>
+      <td>-8.78</td>
+      <td>94.4</td>
+      <td>3.33</td>
+      <td>3.14</td>
+      <td>0.19</td>
+      <td>1.96</td>
+      <td>3.15</td>
+      <td>1307.86</td>
+      <td>0.21</td>
+      <td>0.63</td>
+      <td>192.7</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>01.01.2009 01:10:00</td>
+      <td>996.50</td>
+      <td>-7.62</td>
+      <td>265.81</td>
+      <td>-8.30</td>
+      <td>94.8</td>
+      <td>3.44</td>
+      <td>3.26</td>
+      <td>0.18</td>
+      <td>2.04</td>
+      <td>3.27</td>
+      <td>1305.68</td>
+      <td>0.18</td>
+      <td>0.63</td>
+      <td>166.5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>01.01.2009 01:20:00</td>
+      <td>996.50</td>
+      <td>-7.62</td>
+      <td>265.81</td>
+      <td>-8.36</td>
+      <td>94.4</td>
+      <td>3.44</td>
+      <td>3.25</td>
+      <td>0.19</td>
+      <td>2.03</td>
+      <td>3.26</td>
+      <td>1305.69</td>
+      <td>0.19</td>
+      <td>0.50</td>
+      <td>118.6</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>01.01.2009 01:30:00</td>
+      <td>996.50</td>
+      <td>-7.91</td>
+      <td>265.52</td>
+      <td>-8.73</td>
+      <td>93.8</td>
+      <td>3.36</td>
+      <td>3.15</td>
+      <td>0.21</td>
+      <td>1.97</td>
+      <td>3.16</td>
+      <td>1307.17</td>
+      <td>0.28</td>
+      <td>0.75</td>
+      <td>188.5</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>01.01.2009 01:40:00</td>
+      <td>996.53</td>
+      <td>-8.43</td>
+      <td>264.99</td>
+      <td>-9.34</td>
+      <td>93.1</td>
+      <td>3.23</td>
+      <td>3.00</td>
+      <td>0.22</td>
+      <td>1.88</td>
+      <td>3.02</td>
+      <td>1309.85</td>
+      <td>0.59</td>
+      <td>0.88</td>
+      <td>185.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>
@@ -519,6 +765,17 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date Time
+01.01.2009 00:10:00   -8.02
+01.01.2009 00:20:00   -8.41
+01.01.2009 00:30:00   -8.51
+01.01.2009 00:40:00   -8.31
+01.01.2009 00:50:00   -8.27
+Name: T (degC), dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -527,6 +784,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/12-jena_weather_15_0.png" src="../_images/12-jena_weather_15_0.png" />
 </div>
 </div>
 <div class="section" id="id1">
@@ -546,9 +806,20 @@
 <span class="n">x_train_std</span> <span class="o">=</span> <span class="n">df_univariate</span><span class="p">[:</span><span class="n">TRAIN_SPLIT</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 
 <span class="c1"># Standardize the dataset</span>
-<span class="c1"># YOUR CODE HERE</span>
+<span class="n">df_univariate</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_univariate</span> <span class="o">-</span> <span class="n">x_train_mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">x_train_std</span>
 
 <span class="n">df_univariate</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date Time
+01.01.2009 00:10:00   -1.997660
+01.01.2009 00:20:00   -2.042816
+01.01.2009 00:30:00   -2.054394
+01.01.2009 00:40:00   -2.031237
+01.01.2009 00:50:00   -2.026606
+Name: T (degC), dtype: float64
 </pre></div>
 </div>
 </div>
@@ -603,6 +874,13 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x_train: (299980, 20, 1), y_train: (299980, 1)
+x_val: (59980, 20, 1), y_val: (59980, 1)
+x_test: (60531, 20, 1), y_test: (60531, 1)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -610,6 +888,9 @@
 <span class="n">plot_series</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">x_val</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y_true</span><span class="o">=</span><span class="n">y_val</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/12-jena_weather_21_0.png" src="../_images/12-jena_weather_21_0.png" />
 </div>
 </div>
 </div>
@@ -620,6 +901,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Baseline prediction = input for last time step</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 <span class="n">y_pred_baseline</span> <span class="o">=</span> <span class="n">x_val</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y_pred_baseline: </span><span class="si">{</span><span class="n">y_pred_baseline</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -627,6 +909,12 @@
 
 <span class="c1"># Print MSE</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Baseline MSE: </span><span class="si">{</span><span class="n">baseline_mse</span><span class="si">:</span><span class="s2">0.05f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y_pred_baseline: (59980, 1)
+Baseline MSE: 0.00084
 </pre></div>
 </div>
 </div>
@@ -638,15 +926,43 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/12-jena_weather_24_0.png" src="../_images/12-jena_weather_24_0.png" />
+</div>
 </div>
 <div class="section" id="id2">
 <h3>Question<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Define a Recurrent Neural Network model able to learn from the prepared data and predict the temperature one step ahead. Store it in the <code class="docutils literal notranslate"><span class="pre">univariate_model</span></code> variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Dense</span>
+
+<span class="n">univariate_model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="n">x_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">activation</span> <span class="o">=</span> <span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">activation</span> <span class="o">=</span> <span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">])</span>
 
 <span class="n">univariate_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_32&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_91 (Dense)             (None, 20)                420       
+_________________________________________________________________
+dense_92 (Dense)             (None, 5)                 105       
+_________________________________________________________________
+dense_93 (Dense)             (None, 1)                 6         
+=================================================================
+Total params: 531
+Trainable params: 531
+Non-trainable params: 0
+_________________________________________________________________
 </pre></div>
 </div>
 </div>
@@ -658,17 +974,25 @@
 <span class="n">univariate_model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s2">&quot;adam&quot;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s2">&quot;mse&quot;</span><span class="p">)</span>
 
 <span class="n">history</span> <span class="o">=</span> <span class="n">univariate_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
-    <span class="n">x_train</span><span class="p">,</span>
+    <span class="n">x_train</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">],</span>
     <span class="n">y_train</span><span class="p">,</span>
     <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">batch_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
     <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-    <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">x_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">),</span>
+    <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">x_val</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_val</span><span class="p">),</span>
 <span class="p">)</span>
-
-<span class="n">plot_loss</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_loss</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/12-jena_weather_28_0.png" src="../_images/12-jena_weather_28_0.png" />
 </div>
 </div>
 </div>
@@ -678,7 +1002,7 @@
 <p>The model’s MSE must be lower than the baseline model’s.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred_univariate</span> <span class="o">=</span> <span class="n">univariate_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_val</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -694,14 +1018,22 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Univariate MSE: 0.00064
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot first validation series with ground truth and prediction</span>
-<span class="n">plot_series</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">x_val</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y_true</span><span class="o">=</span><span class="n">y_val</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y_pred</span><span class="o">=</span><span class="n">y_pred_univariate</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">plot_series</span><span class="p">(</span><span class="n">series</span><span class="o">=</span><span class="n">x_val</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y_true</span><span class="o">=</span><span class="n">y_val</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y_pred</span><span class="o">=</span><span class="n">y_pred_univariate</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/12-jena_weather_32_0.png" src="../_images/12-jena_weather_32_0.png" />
 </div>
 </div>
 </div>
